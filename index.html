@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+    <!-- boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.css">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card" id="title">
+                                <div class="card-body">
+                                    <h1 class="display-4 text-center">Anytime is Train Time</h1>
+                                    <p class="text-center">Choo Choo. Chee Chee.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header text-white bg-primary">
+                        <h5>Current Train Schedule</h5>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody id= "train-Data-Here">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <h5 class="card-header text-white bg-primary">Add a Train</h5>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="train-Name">Train Name</label>
+                                <input type="name" class="form-control" id="train-Name"
+                                    placeholder="Enter the train name">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="train-Destination">Destination</label>
+                                <input type="text" class="form-control" id="train-Destination" placeholder="Destination here">
+                            </div>
+                            <div class="form-group">
+                                <label for="train-Start">First Train Time (HH:mm - military time)</label>
+                                <input type="text" class="form-control" id="train-Start" placeholder="HH:mm">
+                            </div>
+                            <div class="form-group">
+                                <label for="train-Freq">Frequency (min)</label>
+                                <input type="number" class="form-control" id="train-Freq"
+                                    placeholder="Train interval in minutes">
+                            </div>
+                            <button type="submit" class="btn btn-primary train-Submit">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- FireBase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <!-- FireBase DB -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+    <!-- Moment CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- javascript -->
+    <script type="text/javascript" src="./assets/javascript/fireBaseConfig.js"></script>
+    <script type="text/javascript" src="./assets/javascript/schedulerLogic.js"></script>
+    
+
+</body>
+
+</html>
